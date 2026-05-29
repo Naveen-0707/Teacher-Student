@@ -3,8 +3,14 @@ Title-card scenes for YouTube Shorts (9:16 vertical).
 Scenes: TechTitleScene, GamingTitleScene
 """
 
+import os
 import random
+import sys
+
 from manim import *
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from base_scene import ShortsScene   # noqa: E402
 
 BG       = "#0a0a0f"
 CYAN_C   = "#00f5ff"
@@ -27,7 +33,7 @@ def _glitch_flash(scene, mob):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-class TechTitleScene(Scene):
+class TechTitleScene(ShortsScene):
     """
     Neon glitch title card for tech/AI Shorts.
     Circuit traces animate in, then the title glitches into view.
@@ -130,7 +136,7 @@ class TechTitleScene(Scene):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-class GamingTitleScene(Scene):
+class GamingTitleScene(ShortsScene):
     """
     Pixel-pop gaming title card for gaming Shorts.
     Grid background, pixel-border box, score-counter effect.

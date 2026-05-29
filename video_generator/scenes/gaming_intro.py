@@ -3,8 +3,14 @@ Gaming scenes for YouTube Shorts (9:16 vertical).
 Scenes: GamingIntroScene, XPBarScene, AchievementScene
 """
 
+import os
 import random
+import sys
+
 from manim import *
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from base_scene import ShortsScene   # noqa: E402
 
 BG      = "#0a0a0f"
 GAME_BG = "#1a0a2e"
@@ -18,7 +24,7 @@ PURPLE_C = "#9b00ff"
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-class GamingIntroScene(Scene):
+class GamingIntroScene(ShortsScene):
     """
     Retro arcade-style intro for gaming Shorts:
       1. Boot-up scanlines flash
@@ -160,7 +166,7 @@ class GamingIntroScene(Scene):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-class XPBarScene(Scene):
+class XPBarScene(ShortsScene):
     """
     XP bar that fills up then triggers a LEVEL UP burst.
     Great as an 8-second Shorts clip.
@@ -262,7 +268,7 @@ class XPBarScene(Scene):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-class AchievementScene(Scene):
+class AchievementScene(ShortsScene):
     """
     'Achievement Unlocked' toast that slides in from the top.
     Under 7 seconds – perfect Shorts overlay.

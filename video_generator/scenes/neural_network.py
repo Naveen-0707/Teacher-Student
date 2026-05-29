@@ -3,8 +3,14 @@ Neural-network scenes for YouTube Shorts (9:16 vertical layout).
 Scenes: NeuralNetworkScene, NeuralTrainingScene
 """
 
+import os
 import random
+import sys
+
 from manim import *
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from base_scene import ShortsScene   # noqa: E402
 
 # ── palette ───────────────────────────────────────────────────────────────────
 BG       = "#0a0a0f"
@@ -16,7 +22,7 @@ WHITE_C  = "#ffffff"
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-class NeuralNetworkScene(Scene):
+class NeuralNetworkScene(ShortsScene):
     """
     Vertical neural-network forward-pass animation.
     Layers stacked top-to-bottom to fill a 9:16 frame.
@@ -160,7 +166,7 @@ class NeuralNetworkScene(Scene):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-class NeuralTrainingScene(Scene):
+class NeuralTrainingScene(ShortsScene):
     """
     Shows a neural net beside a falling loss curve.
     Epoch counter ticks up; loss line drops while nodes pulse.

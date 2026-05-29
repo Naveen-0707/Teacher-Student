@@ -1,0 +1,15 @@
+# Rendered output and temp clips
+output/
+_active_scene.json
+
+# Downloaded assets (large / licensed separately — fetched by `generate.py setup`)
+assets/music/*
+assets/piper/*
+!assets/music/.gitkeep
+!assets/piper/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

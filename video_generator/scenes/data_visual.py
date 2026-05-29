@@ -3,8 +3,14 @@ Data-visualization scenes for YouTube Shorts (9:16 vertical).
 Scenes: DataFlowScene, StatsChartScene
 """
 
+import os
 import random
+import sys
+
 from manim import *
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from base_scene import ShortsScene   # noqa: E402
 
 BG       = "#0a0a0f"
 CYAN_C   = "#00f5ff"
@@ -17,7 +23,7 @@ DIM_C    = "#1a1a2e"
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-class DataFlowScene(Scene):
+class DataFlowScene(ShortsScene):
     """
     Data packets travel through a vertical AI pipeline:
       Raw Data → Pre-process → Model → Output
@@ -131,7 +137,7 @@ class DataFlowScene(Scene):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-class StatsChartScene(Scene):
+class StatsChartScene(ShortsScene):
     """
     Animated vertical bar chart showing AI model comparison scores.
     Bars grow from the bottom with labels – great for 'AI ranked' Shorts.

@@ -1,70 +1,86 @@
 {
-  "_comment": "Edit this file to make your own Shorts. Run: python generate.py script script_example.json",
+  "_comment": "Edit this, then run:  python generate.py script script_example.json -q preview",
 
-  "title":        "5 AI Facts You Need to Know",
-  "channel":      "@YourChannel",
+  "title":   "5 AI Facts You Need to Know",
+  "channel": "@YourChannel",
 
-  "voice_engine": "online",
-  "voice":        "en-US-GuyNeural",
+  "voice_engine":  "edge",
+  "voice":         "en-US-GuyNeural",
+  "quality":       "high",
 
-  "quality":      "high",
+  "length_target": 42,
+  "auto_hook":     true,
+  "loop":          false,
+
+  "captions": {
+    "enabled":  true,
+    "style":    "tiktok",
+    "karaoke":  true
+  },
+
+  "music": {
+    "enabled":   true,
+    "genre":     "energetic",
+    "volume_db": -18,
+    "duck":      true
+  },
+
+  "metadata": {
+    "description": "5 mind-blowing AI facts in under a minute. Follow for daily AI, tech & gaming!",
+    "hashtags":    ["#Shorts", "#AI", "#Tech", "#MachineLearning"]
+  },
 
   "scenes": [
     {
       "template":  "title_card",
-      "duration":  6,
+      "duration":  4,
       "title":     "5 AI Facts",
       "subtitle":  "That Will Blow Your Mind",
       "accent":    "cyan",
-      "narration": "Here are 5 AI facts that will completely change how you see technology!"
+      "narration": "Here are five AI facts that will completely change how you see technology."
     },
-
     {
       "template":  "text_reveal",
       "duration":  8,
       "heading":   "Fact #1",
-      "body":      "ChatGPT reached 100 million users in just 2 months — the fastest growing app ever.",
+      "body":      "ChatGPT reached 100 million users in just 2 months, the fastest growing app ever.",
       "accent":    "cyan",
-      "narration": "ChatGPT became the fastest growing app in history, hitting 100 million users in just two months."
+      "narration": "ChatGPT became the fastest growing app in history, hitting one hundred million users in just two months."
     },
-
     {
       "template":  "neural_network",
-      "duration":  12,
-      "narration": "At its core, AI uses neural networks that mimic how our brain processes information."
+      "duration":  10,
+      "narration": "At its core, modern AI uses neural networks that loosely mimic how the human brain processes information."
     },
-
     {
       "template":  "bullet_points",
-      "duration":  10,
-      "title":     "AI Can Now:",
+      "duration":  9,
+      "title":     "AI Can Now",
       "bullets": [
-        "Write code better than most devs",
+        "Write working code",
         "Generate photorealistic images",
-        "Translate 100+ languages instantly",
+        "Translate 100+ languages",
         "Beat world chess champions"
       ],
       "accent":    "purple",
-      "narration": "Modern AI can write code, generate images, translate 100 languages, and even beat world champions at chess."
+      "narration": "Today's AI can write code, generate realistic images, translate over a hundred languages, and beat world champions at chess."
     },
-
     {
       "template":    "stats_chart",
-      "duration":    10,
-      "chart_title": "AI Market Growth ($B)",
+      "duration":    9,
+      "chart_title": "AI Market ($B)",
       "labels":      ["2020", "2021", "2022", "2023", "2024"],
-      "values":      [50,     93,     136,    207,    305],
+      "values":      [50, 93, 136, 207, 305],
       "accent":      "green",
-      "narration":   "And the AI market exploded from 50 billion to over 300 billion dollars in just four years."
+      "narration":   "And the AI market exploded from fifty billion to over three hundred billion dollars in just four years."
     },
-
     {
       "template":  "title_card",
-      "duration":  5,
+      "duration":  4,
       "title":     "Follow For More",
-      "subtitle":  "AI  •  Tech  •  Gaming",
+      "subtitle":  "AI • Tech • Gaming",
       "accent":    "gold",
-      "narration": "Follow the channel for more AI, tech, and gaming content every week!"
+      "narration": "Follow for more AI, tech, and gaming content every week!"
     }
   ]
 }

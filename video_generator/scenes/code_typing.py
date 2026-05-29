@@ -3,8 +3,14 @@ Code/tech scenes for YouTube Shorts (9:16 vertical).
 Scenes: CodeTypingScene, MatrixRainScene
 """
 
+import os
 import random
+import sys
+
 from manim import *
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from base_scene import ShortsScene   # noqa: E402
 
 BG      = "#0a0a0f"
 GREEN_C = "#00ff41"
@@ -48,7 +54,7 @@ CODE_STRINGS = [
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-class CodeTypingScene(Scene):
+class CodeTypingScene(ShortsScene):
     """
     Dark terminal showing PyTorch code typed out line-by-line.
     Each line reveals with an AddTextLetterByLetter animation.
@@ -137,7 +143,7 @@ class CodeTypingScene(Scene):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-class MatrixRainScene(Scene):
+class MatrixRainScene(ShortsScene):
     """
     Vertical matrix-rain cascade on a black background.
     Characters stream downward in neon green columns.

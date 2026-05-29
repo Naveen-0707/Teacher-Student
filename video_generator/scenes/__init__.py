@@ -4,6 +4,15 @@ All scenes are designed for 9:16 vertical (YouTube Shorts / Instagram Reels).
 """
 
 REGISTRY = {
+    # ── Hook / script-driven templates ───────────────────────────────────────
+    "hook": {
+        "file":  "script_scene.py",
+        "class": "ScriptHookScene",
+        "desc":  "1–2s pattern-interrupt hook (grabs viewers in frame 1)",
+        "tags":  ["hook", "script"],
+        "dur":   "~2s",
+    },
+
     # ── AI / Machine-learning ────────────────────────────────────────────────
     "neural_network": {
         "file":  "neural_network.py",
