@@ -1,0 +1,64 @@
+{
+  "_comment": "Edit this file to create your own Shorts video. Run: python generate.py script script_example.json",
+
+  "title": "5 AI Facts You Need to Know",
+  "channel": "@YourChannel",
+
+  "voice_engine": "online",
+  "voice": "en-US-GuyNeural",
+
+  "quality": "high",
+
+  "scenes": [
+    {
+      "template": "title_card",
+      "title": "5 AI Facts",
+      "subtitle": "That Will Blow Your Mind",
+      "accent": "cyan",
+      "narration": "Here are 5 AI facts that will completely change how you think about technology!"
+    },
+
+    {
+      "template": "text_reveal",
+      "heading": "Fact #1",
+      "body": "ChatGPT reached 100 million users in just 2 months — the fastest growing app in history.",
+      "accent": "cyan",
+      "narration": "ChatGPT became the fastest growing app ever, hitting 100 million users in just two months."
+    },
+
+    {
+      "template": "neural_network",
+      "narration": "At its core, AI uses neural networks that mimic how our brain processes information."
+    },
+
+    {
+      "template": "bullet_points",
+      "title": "AI Can Now:",
+      "bullets": [
+        "Write code better than most devs",
+        "Generate photorealistic images",
+        "Translate 100+ languages instantly",
+        "Beat world chess champions"
+      ],
+      "accent": "purple",
+      "narration": "Modern AI can write code, generate images, translate languages, and even beat world champions at chess."
+    },
+
+    {
+      "template": "stats_chart",
+      "chart_title": "AI Market Growth ($B)",
+      "labels": ["2020", "2021", "2022", "2023", "2024"],
+      "values":  [50,    93,    136,   207,   305],
+      "accent": "green",
+      "narration": "And the AI market has exploded from 50 billion to over 300 billion dollars in just four years."
+    },
+
+    {
+      "template": "title_card",
+      "title": "Follow For More",
+      "subtitle": "AI  •  Tech  •  Gaming",
+      "accent": "gold",
+      "narration": "Follow the channel for more AI, tech, and gaming content every week!"
+    }
+  ]
+}
