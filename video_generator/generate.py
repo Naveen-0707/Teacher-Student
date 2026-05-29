@@ -164,12 +164,6 @@ def cmd_render(args):
                   if not tag or tag in i["tags"]]
         ok, fail = 0, []
         for n in scenes:
-            (_render_one(n, fmt, quality, outdir) and ok + 1
-             or fail.append(n))
-            ok += 1 if _render_one.__code__ else 0   # counted inside
-        # simpler:
-        ok, fail = 0, []
-        for n in scenes:
             if _render_one(n, fmt, quality, outdir):
                 ok += 1
             else:
@@ -223,10 +217,12 @@ def cmd_script(args):
         print("  [warning] narrator/composer not found – rendering video only (no voice)")
 
     for idx, scene_cfg in enumerate(scenes):
-        template = scene_cfg.get("template", "title_card")
+        template  = scene_cfg.get("template",  "title_card")
         narration = scene_cfg.get("narration", "")
+        duration  = scene_cfg.get("duration",  None)   # seconds, or None = keep as-is
 
-        print(f"  [{idx+1}/{len(scenes)}] template={template}")
+        dur_label = f"  duration={duration}s" if duration else ""
+        print(f"  [{idx+1}/{len(scenes)}] template={template}{dur_label}")
 
         # ── write active config for script_scene.py ──────────────────────────
         merged_cfg = {**scene_cfg, "channel": channel}
@@ -251,6 +247,17 @@ def cmd_script(args):
         if not mp4:
             print(f"     ✗  mp4 not found after render, skipping.")
             continue
+
+        # ── apply exact duration (trim or freeze-pad) ─────────────────────────
+        if HAS_AUDIO and duration:
+            sized_mp4 = tmp_dir / f"clip_{idx:02d}_sized.mp4"
+            ok = _composer.set_duration(str(mp4), str(sized_mp4), float(duration))
+            if ok:
+                actual = _composer.get_duration(str(sized_mp4))
+                print(f"     ✓  duration set to {actual:.1f}s")
+                mp4 = sized_mp4
+            else:
+                print(f"     ~ duration adjustment failed, keeping original")
 
         # ── generate narration audio ─────────────────────────────────────────
         final_clip = tmp_dir / f"clip_{idx:02d}_final.mp4"
